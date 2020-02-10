@@ -52,6 +52,6 @@ export const features = [
   {
     title: 'Translatable',
     text:
-      'Each breadcrumb being returned in rewritable translate funcrion. All you need to do is to pass function to `t` property.',
+      'Each breadcrumb being returned in rewritable translate function. All you need to do is to pass function to `t` property.',
   },
 ]
