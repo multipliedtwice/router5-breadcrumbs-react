@@ -1,0 +1,3 @@
+*.tsx          text diff=typescript
+*.ts          text diff=typescript
+*.js          text diff=javascript

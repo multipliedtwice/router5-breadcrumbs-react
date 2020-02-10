@@ -1,0 +1,237 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$slidingAT: 1s;
+$controlSize: 10px;
+
+.slider {
+  height: 50vh;
+  min-height: 380px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 85vh;
+  }
+
+  &__slides {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+  }
+
+  &__control {
+    z-index: 2;
+    position: absolute;
+    top: 43%;
+    width: 60px;
+    height: 60px;
+    margin-left: $controlSize/-2;
+    margin-top: $controlSize/-2;
+    border-radius: 50%;
+    background: #fff;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &--left {
+      left: 50px;
+    }
+
+    &--right {
+      right: 50px;
+    }
+
+    &:hover {
+      background-color: lightgrey;
+    }
+
+    &-line {
+      position: absolute;
+      left: 23px;
+      top: 50%;
+      width: 3px;
+      height: 14px;
+      transform-origin: 50% 0;
+      transform: rotate(-45deg);
+
+      &:nth-child(2) {
+        transform: translateY(1px) rotate(-135deg);
+      }
+
+      .slider__control--right & {
+        left: 37px;
+        transform-origin: 1px 0;
+        transform: rotate(45deg);
+
+        &:nth-child(2) {
+          transform: translateY(1px) rotate(135deg);
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        // background-color: #e2e2e2;
+        transition: background-color 0.3s;
+      }
+
+      .slider__control:hover &:after {
+        background-color: #fff;
+      }
+
+      .slider__control.a--rotation & {
+        &:after {
+          animation: arrowLineRotation 0.49s;
+        }
+
+        &:nth-child(1):after {
+          animation: arrowLineRotationRev 0.49s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes arrowLineRotation {
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes arrowLineRotationRev {
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+.slide {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150vmax;
+  height: 150vmax;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: clip-path 0s $slidingAT * 0.7;
+  clip-path: circle($controlSize/2 at 119vw 50%);
+
+  &.s--prev {
+    clip-path: circle($controlSize/2 at 32vw 50%);
+  }
+
+  &.s--active {
+    z-index: 1;
+    transition: clip-path $slidingAT;
+    clip-path: circle(120vmax at 119vw 50%);
+
+    &.s--active-prev {
+      clip-path: circle(120vmax at 32vw 50%);
+    }
+  }
+
+  // @for $i from 1 through $numOfSlides {
+  //   &:nth-child(#{$i}) {
+  //     .slide__inner {
+  //       background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-#{$i+1}.jpg');
+  //     }
+  //   }
+  // }
+
+  &__inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -50vw;
+    margin-top: -50vh;
+    background-size: cover;
+    background-position: center center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      // background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    left: 25%;
+    top: 0;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: $controlSize/-2;
+    margin-top: $controlSize * 0.8;
+    max-width: 480px;
+    color: #fff;
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  &__text {
+    font-size: 25px;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+$offset: 157;
+$stroke: white;
+
+.progress {
+  transform: rotate(-90deg);
+  stroke: $stroke;
+}
+
+.progress #inner {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: $offset;
+  animation: dash 3s infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -$offset;
+  }
+}
+
+// Below stuff for position only
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &.progress--thin {
+    left: 0;
+    right: 0;
+  }
+
+  &.progress--fat {
+    bottom: 5%;
+    top: auto;
+  }
+}

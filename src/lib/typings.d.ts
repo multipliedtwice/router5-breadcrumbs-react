@@ -1,0 +1,37 @@
+export type BreadcrumbsProps = {
+  removeCrumb?: Array<string>
+  forward?: { from: string; to: string }
+  t?: ([crumb]: string) => string
+  debugMode?: boolean
+  homeRouteName?: string
+  icons?: {
+    CustomHomeIcon: React.ReactElement
+    CustomArrowIcon: React.ReactElement
+  }
+  classes?: {
+    activeLink: string
+    currentPage: string
+    icon: string
+    wrapper: string
+    arrowIcon: string
+    homeIcon: string
+  }
+  iconProps?: {
+    strokeWidth: string
+    fill: string
+    stroke: string
+    className
+  }
+}
+
+export interface RouterWithCrumbs {
+  name: string
+  route: string
+  crumb?: string
+  children?: Array<RouterWithCrumbs>
+}
+
+export type Paths = {
+  route: string
+  name: string
+}
