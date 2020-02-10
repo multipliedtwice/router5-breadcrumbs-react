@@ -3,6 +3,7 @@ import { App } from './App'
 import { RouterProvider } from 'react-router5'
 import createRouter from './create-router'
 import { render } from 'react-dom'
+import './i18n'
 
 const router = createRouter({
   listener: true,
