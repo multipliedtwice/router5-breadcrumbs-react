@@ -557,7 +557,7 @@ module.exports = function(webpackEnv) {
     plugins: [
       new PrerenderSPAPlugin({
         // Required - The path to the webpack-outputted app to prerender.
-        staticDir: path.join(__dirname, '../demo'),
+        staticDir: path.join(__dirname, '../public'),
         // Required - Routes to render.
         routes: ['/', '/privacy'],
       }),
