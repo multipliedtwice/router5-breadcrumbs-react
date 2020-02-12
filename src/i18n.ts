@@ -6,7 +6,7 @@ import resources from './locales'
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'en',
+  lng: 'ru',
   fallbackLng: 'en',
   nsSeparator: false,
   keySeparator: false,
