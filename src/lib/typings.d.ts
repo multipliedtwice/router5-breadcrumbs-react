@@ -4,6 +4,7 @@ export type BreadcrumbsProps = {
   t?: ([crumb]: string) => string
   debugMode?: boolean
   homeRouteName?: string
+  homeRouteLabel?: string
   icons?: {
     CustomHomeIcon: React.ReactElement
     CustomArrowIcon: React.ReactElement
@@ -13,8 +14,6 @@ export type BreadcrumbsProps = {
     currentPage: string
     icon: string
     wrapper: string
-    arrowIcon: string
-    homeIcon: string
   }
   iconProps?: {
     strokeWidth: string
