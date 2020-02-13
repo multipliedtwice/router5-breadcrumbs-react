@@ -20,6 +20,14 @@ npm i router5-breadcrumbs-react
 yarn add router5-breadcrumbs-react
 ```
 
+## Features
+
+- :paperclip: Microdata and semantics
+- :earth_asia: Translation support
+- :hamster: Tiny component (~3kb gzipped)
+- :scissors: Customizable icons
+- :heart: Tailwind default styles
+
 ## Breadcrumbs usage
 
 ```tsx
