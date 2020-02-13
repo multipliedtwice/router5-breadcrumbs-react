@@ -2,7 +2,7 @@
 
 <img src="public/banner-01.jpg" alt="React breadcrumbs component download" width="100%">
 
-> Breadcrumbs component, based on router5 and react.js which renders crumbs automatically.
+> Breadcrumbs component, based on router5 and react.js which renders crumbs automatically written in less than 200 lines of code.
 
 [![NPM](https://img.shields.io/npm/v/router5-breadcrumbs.svg)](https://www.npmjs.com/package/router5-breadcrumbs) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![npm](https://img.shields.io/npm/dm/@thousandsofraccoons/router5-breadcrumbs-react)
 
@@ -150,7 +150,8 @@ Use it if you want to overwrite links assigned by default.
 
 default =
 
-```typescript {
+```typescript
+{
   activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
   currentPage = 'text-gray-500 ml-2',
   wrapper = 'flex items-baseline text-xl my-10 whitespace-no-wrap',
