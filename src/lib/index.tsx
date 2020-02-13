@@ -10,6 +10,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   t = (text: string) => text,
   iconProps,
   homeRouteName = 'home',
+  homeRouteLabel = 'Home',
   classes: {
     activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
     currentPage = 'text-gray-500 ml-2',
@@ -103,7 +104,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
               itemProp='url'
             >
               <Home />
-              {t('Home')}
+              {t(homeRouteLabel)}
             </Link>
           </li>
           <Arrow />
