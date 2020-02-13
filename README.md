@@ -190,3 +190,10 @@ Tiny tabbed navigation component, which renders selected tab in active breadcrum
 ## License
 
 MIT © [https://github.com/thousandsofraccoons](https://github.com/thousandsofraccoons)
+
+<style>
+  ol {
+    list-style-type: none;
+    margin-left: 40px;
+  }
+</style>
