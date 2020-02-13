@@ -78,7 +78,18 @@ export const Page = () => {
 
 `function`
 
-default = `(text: string) => text`,
+default = `(text: string) => text`
+
+To enable translation just pass translation function to component:
+
+```typescript
+import { useTranslation } from 'react-i18next'
+
+export const Example = () => {
+  const { t } = useTranslation()
+  return <Breadcrumbs t={t} />
+}
+```
 
 > #### homeRouteName
 
@@ -170,15 +181,3 @@ Tiny tabbed navigation component, which renders selected tab in active breadcrum
 ## License
 
 MIT © [https://github.com/thousandsofraccoons](https://github.com/thousandsofraccoons)
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
