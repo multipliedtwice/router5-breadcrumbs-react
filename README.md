@@ -22,11 +22,11 @@ yarn add router5-breadcrumbs-react
 
 ## Features
 
-- :paperclip: Microdata and semantics
-- :earth_asia: Translation support
-- :hamster: Tiny component (~3kb gzipped)
-- :scissors: Customizable icons
-- :heart: Tailwind default styles
+:paperclip: Microdata and semantics  
+:earth_asia: Translation support  
+:hamster: Tiny component (~3kb gzipped)  
+:scissors: Customizable icons  
+:heart: Tailwind default styles
 
 ## Breadcrumbs usage
 
@@ -190,10 +190,3 @@ Tiny tabbed navigation component, which renders selected tab in active breadcrum
 ## License
 
 MIT © [https://github.com/thousandsofraccoons](https://github.com/thousandsofraccoons)
-
-<style>
-  ol {
-    list-style-type: none;
-    margin-left: 40px;
-  }
-</style>
