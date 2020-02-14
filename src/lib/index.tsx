@@ -47,7 +47,6 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
               ),
             }
           }
-          console.log('got[idx]', got[idx])
           return (
             crumb.route !== '@@router5/UNKNOWN_ROUTE' && (
               <React.Fragment key={idx}>
