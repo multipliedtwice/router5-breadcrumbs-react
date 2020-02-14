@@ -15,6 +15,7 @@ export const Layout: FunctionComponent<Props> = ({ children }) => {
         </a>
       </div>
       <Breadcrumbs />
+
       {React.cloneElement(children, { customProp: 'Hello' })}
     </>
   )

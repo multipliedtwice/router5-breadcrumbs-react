@@ -24,7 +24,7 @@ yarn add router5-breadcrumbs-react
 
 :paperclip: Microdata and semantics  
 :earth_asia: Translation support  
-:hamster: Tiny component (~3kb gzipped)  
+:hamster: Tiny component (< 200 lines, ~3kb gzipped)  
 :scissors: Customizable icons  
 :heart: Tailwind default styles
 
@@ -63,10 +63,33 @@ export const routes = [
 
 ## Props
 
-> #### removeCrumbs
+> #### got
+>
+> `{[index: number]: string | React.ReactElement}`
 
-`Array<`string`>`
-default = `undefined`
+```tsx
+<Breadcrumbs got={{ 0: product_title }} />
+```
+
+Allows to pass dynamic value resulted from fetch request to server. Starts from 0, root crumb not being count in.
+
+> #### children
+>
+> `string | React.ReactElement`  
+> default = `undefined`
+
+```tsx
+export const Example = () => {
+  return <Breadcrumbs>{product_title}</Breadcrumbs>
+}
+```
+
+Allows to rewrite current page's link with dynamic value.
+
+> #### removeCrumbs
+>
+> `Array<`string`>`  
+> default = `undefined`
 
 In some cases you would prefer to hide certain crumbs. For example if you have duplicated nodes in your route tree. Or in case when one view being returned for two different routes (for example if you using **router5-tabs-react** with redirect to \*.tabs parameter)
 
@@ -83,14 +106,13 @@ export const Page = () => {
 ```
 
 > #### t
-
-`function`
-
-default = `(text: string) => text`
+>
+> `function`  
+> default = `(text: string) => text`
 
 To enable translation just pass translation function to component:
 
-```typescript
+```tsx
 import { useTranslation } from 'react-i18next'
 
 export const Example = () => {
@@ -100,16 +122,16 @@ export const Example = () => {
 ```
 
 > #### homeRouteName
-
-`string`
-default = `'home'`
+>
+> `string`
+> default = `'home'`
 
 Name of route node which will be assigned to **Home** crumb
 
 > #### homeRouteLabel
-
-`string`
-default = `'Home'`
+>
+> `string`
+> default = `'Home'`
 
 ```typescript
 {

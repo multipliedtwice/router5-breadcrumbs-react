@@ -9,6 +9,8 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   forward,
   t = (text: string) => text,
   iconProps,
+  children,
+  got = {},
   homeRouteName = 'home',
   homeRouteLabel = 'Home',
   classes: {
@@ -21,12 +23,10 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   const {
     route: { params, path },
   } = useRoute()
-
   const { filteredPaths, handleClick, dependencies } = useBreadcrumbs(
     removeCrumb,
     forward
   )
-
   const Arrow = () =>
     CustomArrowIcon.type.name ? CustomArrowIcon : <ArrowIcon {...iconProps} />
 
@@ -47,7 +47,6 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
               ),
             }
           }
-
           return (
             crumb.route !== '@@router5/UNKNOWN_ROUTE' && (
               <React.Fragment key={idx}>
@@ -66,10 +65,11 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                         onClick={handleClick}
                         itemProp='url'
                       >
-                        {t(`${crumb.crumb || crumb.name}`)}
+                        {got[idx] !== undefined
+                          ? got[idx]
+                          : t(`${crumb.crumb || crumb.name}`)}
                       </Link>
                       <Arrow />
-                      <Crumbs />
                     </li>
                   )
                 ) : (
@@ -78,7 +78,9 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                     itemType='http://data-vocabulary.org/Breadcrumb'
                     className={currentPage}
                   >
-                    {t(`${crumb.crumb || crumb.name}`)}
+                    {typeof children === 'object'
+                      ? children
+                      : t(`${children || crumb.crumb || crumb.name}`)}
                   </li>
                 )}
               </React.Fragment>
