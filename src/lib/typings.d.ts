@@ -13,6 +13,7 @@ export type BreadcrumbsProps = {
   classes?: {
     activeLink: string
     currentPage: string
+    activeCrumb: string
     icon: string
     wrapper: string
   }

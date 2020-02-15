@@ -16,6 +16,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   classes: {
     activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
     currentPage = 'text-gray-500 ml-2',
+    activeCrumb = 'list-none flex items-baseline',
     wrapper = 'flex items-baseline text-xl my-10 whitespace-no-wrap',
   } = {},
   icons: { CustomHomeIcon = <></>, CustomArrowIcon = <></> } = {},
@@ -55,7 +56,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                     <li
                       itemScope
                       itemType='http://data-vocabulary.org/Breadcrumb'
-                      className='list-none flex items-baseline'
+                      className={activeCrumb}
                     >
                       <Link
                         className={activeLink}
@@ -98,7 +99,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
           <li
             itemScope
             itemType='http://data-vocabulary.org/Breadcrumb'
-            className='list-none flex items-baseline'
+            className={activeCrumb}
           >
             <Link
               className={activeLink}
