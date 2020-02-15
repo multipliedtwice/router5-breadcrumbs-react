@@ -68,7 +68,9 @@ export const routes = [
 > `{[index: number]: string | React.ReactElement}`
 >
 > ```tsx
-> <Breadcrumbs got={{ 0: product_title }} />
+> export const Example = () => {
+>   return <Breadcrumbs got={{ 0: product_title }} />
+> }
 > ```
 >
 > Allows to pass dynamic value resulted from fetch request to server. Starts from 0, root crumb not being count in.
@@ -94,14 +96,8 @@ export const routes = [
 > In some cases you would prefer to hide certain crumbs. For example if you have duplicated nodes in your route tree. Or in case when one view being returned for two different routes (for example if you using **router5-tabs-react** with redirect to \*.tabs parameter)
 >
 > ```tsx
-> import Breadcrumbs from 'router5-breadcrumbs-react'
->
-> export const Page = () => {
->   return (
->     <>
->       <Breadcrumbs removeCrumbs={['route.names', 'to.hide']} />
->     </>
->   )
+> export const Example = () => {
+>   return <Breadcrumbs removeCrumbs={['route.names', 'to.hide']} />
 > }
 > ```
 
