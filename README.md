@@ -51,7 +51,7 @@ Including breadcrumbs tag into page will automatically render trail to current p
 }
 ```
 
-Or you can specify crumbs right in your router5 route files:
+Or you can specify crumbs right in your **router5** route files:
 Tree structure also will work in the same way - just add "crumb" key to each children. Each hierarchical link will be passed translated if translation function is specified. See description of [**t** props](#t)
 
 ```typescript
