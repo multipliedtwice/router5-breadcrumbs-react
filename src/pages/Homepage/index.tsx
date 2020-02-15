@@ -1,10 +1,13 @@
 import React, { Suspense } from 'react'
 import { Hero, Features, Iframes, Comments } from '../../components'
 import { hero, features } from './data'
+import { Header } from '../../components/header'
+import { Footer } from '../../components/footer'
 
 export const Homepage = () => {
   return (
     <>
+      <Header />
       <Suspense fallback={<></>}>
         <Hero hero={hero} />
       </Suspense>
@@ -16,6 +19,7 @@ export const Homepage = () => {
         <Iframes />
         <Comments />
       </div>
+      <Footer />
     </>
   )
 }
