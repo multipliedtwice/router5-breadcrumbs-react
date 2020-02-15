@@ -51,7 +51,7 @@ Including breadcrumbs tag into page will automatically render trail to current p
 }
 ```
 
-Or you can specify crumbs right in your router5 route files:
+Or you can specify crumbs right in your **router5** route files:
 Tree structure also will work in the same way - just add "crumb" key to each children. Each hierarchical link will be passed translated if translation function is specified. See description of [**t** props](#t)
 
 ```typescript
@@ -66,140 +66,136 @@ export const routes = [
 > #### got
 >
 > `{[index: number]: string | React.ReactElement}`
-
-```tsx
-<Breadcrumbs got={{ 0: product_title }} />
-```
-
-Allows to pass dynamic value resulted from fetch request to server. Starts from 0, root crumb not being count in.
+>
+> ```tsx
+> export const Example = () => {
+>   return <Breadcrumbs got={{ 0: product_title }} />
+> }
+> ```
+>
+> Allows to pass dynamic value resulted from fetch request to server. Starts from 0, root crumb not being count in.
 
 > #### children
 >
 > `string | React.ReactElement`  
 > default = `undefined`
-
-```tsx
-export const Example = () => {
-  return <Breadcrumbs>{product_title}</Breadcrumbs>
-}
-```
-
-Allows to rewrite current page's link with dynamic value.
+>
+> ```tsx
+> export const Example = () => {
+>   return <Breadcrumbs>{product_title}</Breadcrumbs>
+> }
+> ```
+>
+> Allows to rewrite current page's link with dynamic value.
 
 > #### removeCrumbs
 >
-> `Array<`string`>`  
+> `Array<string>`
 > default = `undefined`
-
-In some cases you would prefer to hide certain crumbs. For example if you have duplicated nodes in your route tree. Or in case when one view being returned for two different routes (for example if you using **router5-tabs-react** with redirect to \*.tabs parameter)
-
-```tsx
-import Breadcrumbs from 'router5-breadcrumbs-react'
-
-export const Page = () => {
-  return (
-    <>
-      <Breadcrumbs removeCrumbs={['route.names', 'to.hide']} />
-    </>
-  )
-}
-```
+>
+> In some cases you would prefer to hide certain crumbs. For example if you have duplicated nodes in your route tree. Or in case when one view being returned for two different routes (for example if you using **router5-tabs-react** with redirect to \*.tabs parameter)
+>
+> ```tsx
+> export const Example = () => {
+>   return <Breadcrumbs removeCrumbs={['route.names', 'to.hide']} />
+> }
+> ```
 
 > #### t
 >
 > `function`  
 > default = `(text: string) => text`
-
-To enable translation just pass translation function to component:
-
-```tsx
-import { useTranslation } from 'react-i18next'
-
-export const Example = () => {
-  const { t } = useTranslation()
-  return <Breadcrumbs t={t} />
-}
-```
+>
+> To enable translation just pass translation function to component:
+>
+> ```tsx
+> import { useTranslation } from 'react-i18next'
+>
+> export const Example = () => {
+>   const { t } = useTranslation()
+>   return <Breadcrumbs t={t} />
+> }
+> ```
 
 > #### homeRouteName
 >
 > `string`
 > default = `'home'`
-
-Name of route node which will be assigned to **Home** crumb
+>
+> Name of route node which will be assigned to **Home** crumb
 
 > #### homeRouteLabel
 >
 > `string`
 > default = `'Home'`
-
-```typescript
-{
-  strokeWidth: string
-  fill: string
-  stroke: string
-  className: any
-}
-```
-
-Defines which label for root of the trail to display.
+>
+> ```typescript
+> {
+>   strokeWidth: string
+>   fill: string
+>   stroke: string
+>   className: any
+> }
+> ```
+>
+> Defines which label for root of the trail to display.
 
 > #### iconProps
-
-```typescript
-{
-  strokeWidth: string
-  fill: string
-  stroke: string
-  className: any
-}
-```
-
-Parameters, which will be applied to default Home Icon and Arrow Icons
+>
+> ```typescript
+> {
+>   strokeWidth: string
+>   fill: string
+>   stroke: string
+>   className: any
+> }
+> ```
+>
+> Parameters, which will be applied to default Home Icon and Arrow Icons
 
 > #### forward
-
-```typescript
-{
-  from: string // router paths
-  to: string
-}
-```
-
-Use it if you want to overwrite links assigned by default.
+>
+> ```typescript
+> {
+>   from: string // router paths
+>   to: string
+> }
+> ```
+>
+> Use it if you want to overwrite links assigned by default.
 
 > #### classes
+>
+> ```typescript
+> {
+>   activeLink: string // clickable links style
+>   currentPage: string // classes for current page's label
+>   wrapper: string // <ol></ol> tag around trails
+> }
+> ```
+>
+> default =
+>
+> ```typescript
+> {
+>   activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
+>   currentPage = 'text-gray-500 ml-2',
+>   wrapper = 'flex items-baseline text-xl my-10 whitespace-no-wrap',
+> }
+> ```
+>
+> Classnames for HTML elements.
 
-```typescript
-{
-  activeLink: string // clickable links style
-  currentPage: string // classes for current page's label
-  wrapper: string // <ol></ol> tag around trails
-}
-```
-
-default =
-
-```typescript
-{
-  activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
-  currentPage = 'text-gray-500 ml-2',
-  wrapper = 'flex items-baseline text-xl my-10 whitespace-no-wrap',
-}
-```
-
-Classnames for HTML elements.
-
-> #### icons
-
-```typescript
-{
-  CustomHomeIcon: React.ReactElement
-  CustomArrowIcon: React.ReactElement
-}
-```
-
-default = `<></>`
+> > #### icons
+>
+> ```typescript
+> {
+>   CustomHomeIcon: React.ReactElement
+>   CustomArrowIcon: React.ReactElement
+> }
+> ```
+>
+> default = `<></>`
 
 ## Check also
 
