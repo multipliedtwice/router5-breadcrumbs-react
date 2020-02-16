@@ -42,12 +42,12 @@ export const Page = () => {
 }
 ```
 
-Including breadcrumbs tag into page will automatically render trail to current page based on it's path. It could be something like: _"user > user/profile"_. You can utilize it by using localization files, just add following to your json with translations:
+Including breadcrumbs tag into page will automatically render trail to current page based on it's path. It could be something like: _"user > user-profile"_. You can utilize it by using localization files, just add following to your json with translations:
 
 ```json
 {
   "user": "User",
-  "user/profile": "Profile"
+  "user-profile": "Profile"
 }
 ```
 

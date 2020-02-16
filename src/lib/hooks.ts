@@ -11,16 +11,10 @@ export const useBreadcrumbs = (
   } = useRoute()
   const dependencies = getDependencies()
 
-  const getParameter = (
-    curr: string,
-    acc: any,
-    idx: number,
-    separator: string
-  ) => {
-    const val = separator === '/' ? 'name' : 'route'
+  const getParameter = (curr: string, acc: any, idx: number) => {
     if (!(acc.length > 0)) return curr
-    if (curr === 'tab') return `${acc[idx - 1][val]}${separator}${params.tab}`
-    return `${acc[idx - 1][val]}${separator}${curr}`
+    if (curr === 'tab') return `${acc[idx - 1]['route']}.${params.tab}`
+    return `${acc[idx - 1]['route']}.${curr}`
   }
 
   const findCrumb = (name: string, arr: any) => {
@@ -33,9 +27,10 @@ export const useBreadcrumbs = (
   }
 
   const routeNameToArray = (paths: Array<Paths>, curr: string, idx: number) => {
+    const parameter = getParameter(curr, paths, idx)
     const newPath = {
-      route: getParameter(curr, paths, idx, '.'),
-      name: getParameter(curr, paths, idx, '/'),
+      route: parameter,
+      name: parameter.replace(/\./gi, '-'),
       crumb: findCrumb(curr, dependencies),
     }
     paths.push(newPath)

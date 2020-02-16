@@ -26,4 +26,5 @@ export const ru = {
   Translatable: 'Переводимые',
   'Each breadcrumb being returned in rewritable translate function. All you need to do is to pass function to `t` property.':
     'Каждый крошка возвращается в перезаписываемой функции перевода. Все, что вам нужно сделать, это передать функцию в свойство` t`.',
+  Languages: 'Перевод',
 }

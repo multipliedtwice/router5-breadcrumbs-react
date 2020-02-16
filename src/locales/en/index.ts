@@ -24,4 +24,5 @@ export const en = {
   Translatable: 'Translatable',
   'Each breadcrumb being returned in rewritable translate function. All you need to do is to pass function to `t` property':
     'Each breadcrumb being returned in rewritable translate function. All you need to do is to pass function to `t` property',
+  Languages: 'Languages',
 }

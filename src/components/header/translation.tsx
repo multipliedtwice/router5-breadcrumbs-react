@@ -1,17 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { TranslationIcon, IconFlagEN, IconFlagRU } from '../icons'
+import i18n from '../../i18n'
 
 export const Translation = () => {
+  const { t } = useTranslation()
+  const [isMenuShown, setIsMenuShown] = useState<boolean>(false)
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng)
+  }
+
   return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-    >
-      <path
-        fill='white'
-        d=' M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z '
-      ></path>
-    </svg>
+    <div className='ml-4'>
+      <div
+        onClick={() => setIsMenuShown(prev => !prev)}
+        className='flex items-center cursor-pointer hover:opacity-75'
+      >
+        <TranslationIcon />
+        <div className='ml-2'>{t('Languages')}</div>
+      </div>
+      <div
+        className={`absolute left-0 right-0 top-full z-3 
+          w-full h-lang bg-gray-900 flex items-center 
+          justify-center ${isMenuShown ? '' : 'hidden'}`}
+      >
+        <div className='flex'>
+          <IconFlagEN
+            clickHandler={() => {
+              changeLanguage('en')
+              setIsMenuShown(false)
+            }}
+          />
+          <IconFlagRU
+            clickHandler={() => {
+              changeLanguage('ru')
+              setIsMenuShown(false)
+            }}
+          />
+        </div>
+      </div>
+    </div>
   )
 }

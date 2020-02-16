@@ -466,6 +466,10 @@ object {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -492,6 +496,10 @@ object {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.h-lang {
+  height: calc(100vh - 69px);
 }
 
 .leading-none {
@@ -564,6 +572,10 @@ object {
   margin-top: 2.5rem;
 }
 
+.hover\:opacity-75:hover {
+  opacity: 0.75;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -597,6 +609,10 @@ object {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
@@ -611,6 +627,10 @@ object {
 
 .left-0 {
   left: 0;
+}
+
+.top-full {
+  top: 100%;
 }
 
 .text-white {
@@ -655,6 +675,10 @@ object {
 
 .w-full {
   width: 100%;
+}
+
+.z-3 {
+  z-index: 3;
 }
 
 .z-10 {

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const Github = () => {
+  const { t } = useTranslation()
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -8,7 +10,7 @@ export const Github = () => {
       height='47.5'
       viewBox='0 0 49 49'
     >
-      <title>Source code on GitHub</title>
+      <title>{t('Source code on GitHub')}</title>
       <path
         d='M47,23A23.5,23.5,0,0,0,0,23L0,48H47Z'
         transform='translate(0 1)'
