@@ -1,5 +1,5 @@
 export type BreadcrumbsProps = {
-  removeCrumb?: Array<string>
+  hide?: Array<string>
   forward?: { from: string; to: string }
   t?: ([crumb]: string) => string
   got?: { [index: number]: string | React.ReactElement }

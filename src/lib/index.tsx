@@ -5,7 +5,7 @@ import { HomeIcon, ArrowIcon } from './assets'
 import { useBreadcrumbs } from './hooks'
 
 export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
-  removeCrumb,
+  hide,
   forward,
   t = (text: string) => text,
   iconProps,
@@ -25,7 +25,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
     route: { params, path },
   } = useRoute()
   const { filteredPaths, handleClick, dependencies } = useBreadcrumbs(
-    removeCrumb,
+    hide,
     forward
   )
   const Arrow = () =>

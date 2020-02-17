@@ -1,6 +1,12 @@
 export default [
-  { name: 'home', path: '/', crumb: 'Home' },
-  { name: 'privacy', path: '/privacy', crumb: 'Privacy Policy' },
+  { name: 'en', path: '/', crumb: 'Home' },
+  { name: 'ru', path: '/ru', crumb: 'Home' },
+  { name: 'en.privacy', path: '/privacy', crumb: 'Privacy Policy' },
+  {
+    name: 'ru.privacy',
+    path: '/politika-privatnosti',
+    crumb: 'Privacy Policy',
+  },
 
   // TREE ROUTES
   {
