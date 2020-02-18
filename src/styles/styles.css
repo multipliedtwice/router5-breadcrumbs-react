@@ -673,6 +673,10 @@ object {
   width: 25%;
 }
 
+.w-9\/12 {
+  width: 75%;
+}
+
 .w-full {
   width: 100%;
 }

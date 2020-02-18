@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './styles/styles.css'
 import { Layout } from './components'
-import { useRouteNode, useRoute } from 'react-router5'
+import { useRoute } from 'react-router5'
 import { Homepage, NotFound } from './pages'
 import { Privacy } from './pages/PrivacyPolicy'
 import i18next from 'i18next'
@@ -19,17 +19,15 @@ const pages: PagesType = {
 }
 
 export const App = () => {
-  const { route } = useRouteNode('')
-  let [page] = route.name.split('.')
-
   const {
     route: { name },
     router: { navigate },
   } = useRoute()
 
   useEffect(() => {
-    if (i18n.language !== name) {
-      i18n.changeLanguage(name)
+    const [languagePrefix] = name.split('.')
+    if (i18n.language !== languagePrefix) {
+      i18n.changeLanguage(languagePrefix)
     }
   })
 
@@ -37,7 +35,7 @@ export const App = () => {
     navigate(lang)
   })
 
-  const Page = pages[page] || <NotFound />
+  const Page = pages[name] || <NotFound />
 
   return <Layout>{Page}</Layout>
 }

@@ -4,7 +4,7 @@ export type BreadcrumbsProps = {
   t?: ([crumb]: string) => string
   got?: { [index: number]: string | React.ReactElement }
   debugMode?: boolean
-  homeRouteName?: string
+  homeRouteName?: Array<string>
   homeRouteLabel?: string
   icons?: {
     CustomHomeIcon: React.ReactElement

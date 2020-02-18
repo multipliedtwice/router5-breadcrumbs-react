@@ -3,7 +3,6 @@ import i18n from 'i18next'
 import detector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import resources from './locales'
-import i18next from 'i18next'
 
 const detection = {
   // order and from where user language should be detected
@@ -37,7 +36,6 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    // nsSeparator: false,
     keySeparator: false,
     detection,
   })
