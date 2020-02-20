@@ -2,7 +2,7 @@ import { useRoute } from 'react-router5'
 import { RouterWithCrumbs, Paths } from './typings'
 
 export const useBreadcrumbs = (
-  removeCrumb: Array<string>,
+  hide: Array<string>,
   forwarding: { from: string; to: string }
 ) => {
   const {
@@ -43,8 +43,7 @@ export const useBreadcrumbs = (
 
   const pathsArray = name.split('.').reduce(routeNameToArray, [])
 
-  const filterPaths = (el: { route: string }) =>
-    !(removeCrumb !== undefined && removeCrumb.includes(el.route, 0))
+  const filterPaths = (el: { route: string }) => !hide?.includes(el.route, 0)
 
   const filteredPaths = pathsArray.filter(filterPaths)
 

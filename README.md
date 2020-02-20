@@ -88,7 +88,7 @@ export const routes = [
 >
 > Allows to rewrite current page's link with dynamic value.
 
-> #### removeCrumbs
+> #### hide
 >
 > `Array<string>`
 > default = `undefined`
@@ -97,7 +97,7 @@ export const routes = [
 >
 > ```tsx
 > export const Example = () => {
->   return <Breadcrumbs removeCrumbs={['route.names', 'to.hide']} />
+>   return <Breadcrumbs hide={['route.names', 'to.hide']} />
 > }
 > ```
 

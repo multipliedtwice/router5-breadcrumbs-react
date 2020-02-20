@@ -36,7 +36,6 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    // nsSeparator: false,
     keySeparator: false,
     detection,
   })

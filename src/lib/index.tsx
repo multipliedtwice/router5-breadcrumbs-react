@@ -5,13 +5,13 @@ import { HomeIcon, ArrowIcon } from './assets'
 import { useBreadcrumbs } from './hooks'
 
 export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
-  removeCrumb,
+  hide,
   forward,
   t = (text: string) => text,
   iconProps,
   children,
   got = {},
-  homeRouteName = 'home',
+  homeRouteName = ['ru', 'en'],
   homeRouteLabel = 'Home',
   classes: {
     activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
@@ -22,18 +22,18 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   icons: { CustomHomeIcon = <></>, CustomArrowIcon = <></> } = {},
 }) => {
   const {
-    route: { params, path },
+    route: { name, params, path },
   } = useRoute()
   const { filteredPaths, handleClick, dependencies } = useBreadcrumbs(
-    removeCrumb,
+    hide,
     forward
   )
+
   const Arrow = () =>
     CustomArrowIcon.type.name ? CustomArrowIcon : <ArrowIcon {...iconProps} />
 
   const Home = () =>
     CustomHomeIcon.type.name ? CustomHomeIcon : <HomeIcon {...iconProps} />
-
   const Crumbs = () => {
     return (
       <>
@@ -48,8 +48,12 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
               ),
             }
           }
+          const isMostLikelyHome =
+            crumb.route !== '@@router5/UNKNOWN_ROUTE' &&
+            !homeRouteName.some(r => crumb.route === r)
+
           return (
-            crumb.route !== '@@router5/UNKNOWN_ROUTE' && (
+            isMostLikelyHome && (
               <React.Fragment key={idx}>
                 {isNotEnd ? (
                   t(`${crumb.crumb || crumb.name}`) && (
@@ -103,7 +107,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
           >
             <Link
               className={activeLink}
-              routeName={homeRouteName}
+              routeName={name.split('.')[0]}
               itemProp='url'
             >
               <Home />

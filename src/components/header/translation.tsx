@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TranslationIcon, IconFlagEN, IconFlagRU } from '../icons'
-import i18n from '../../i18n'
 
 export const Translation = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [isMenuShown, setIsMenuShown] = useState<boolean>(false)
   const changeLanguage = lng => {
     i18n.changeLanguage(lng)

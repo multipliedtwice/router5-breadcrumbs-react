@@ -1,5 +1,11 @@
 import React from 'react'
+import { Breadcrumbs } from '../../lib'
 
 export const NotFound = () => {
-  return <div>Not Found</div>
+  return (
+    <div>
+      <Breadcrumbs />
+      Not Found
+    </div>
+  )
 }
