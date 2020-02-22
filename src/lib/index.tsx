@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { useRoute, Link } from 'react-router5'
+import { Link } from 'react-router5'
 import { BreadcrumbsProps, RouterWithCrumbs } from './typings'
 import { HomeIcon, ArrowIcon } from './assets'
 import { useBreadcrumbs } from './hooks'
@@ -17,17 +17,18 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
     activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
     currentPage = 'text-gray-500 ml-2',
     activeCrumb = 'list-none flex items-baseline',
-    wrapper = 'flex items-baseline text-xl my-10 whitespace-no-wrap',
+    wrapper = 'flex items-baseline text-xl py-10 whitespace-no-wrap',
   } = {},
   icons: { CustomHomeIcon = <></>, CustomArrowIcon = <></> } = {},
 }) => {
   const {
-    route: { name, params, path },
-  } = useRoute()
-  const { filteredPaths, handleClick, dependencies } = useBreadcrumbs(
-    hide,
-    forward
-  )
+    filteredPaths,
+    handleClick,
+    dependencies,
+    path,
+    name,
+    params,
+  } = useBreadcrumbs(hide, forward)
 
   const Arrow = () =>
     CustomArrowIcon.type.name ? CustomArrowIcon : <ArrowIcon {...iconProps} />
@@ -113,8 +114,8 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
               <Home />
               {t(homeRouteLabel)}
             </Link>
+            <Arrow />
           </li>
-          <Arrow />
           <Crumbs />
         </ol>
       </nav>

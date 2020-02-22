@@ -6,7 +6,7 @@ export const useBreadcrumbs = (
   forwarding: { from: string; to: string }
 ) => {
   const {
-    route: { name, params },
+    route: { name, params, path },
     router: { forward, getDependencies },
   } = useRoute()
   const dependencies = getDependencies()
@@ -54,5 +54,8 @@ export const useBreadcrumbs = (
     filteredPaths,
     handleClick,
     dependencies,
+    path,
+    name,
+    params,
   }
 }

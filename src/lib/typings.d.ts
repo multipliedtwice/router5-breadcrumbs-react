@@ -11,11 +11,11 @@ export type BreadcrumbsProps = {
     CustomArrowIcon: React.ReactElement
   }
   classes?: {
-    activeLink: string
-    currentPage: string
-    activeCrumb: string
-    icon: string
-    wrapper: string
+    activeLink?: string
+    currentPage?: string
+    activeCrumb?: string
+    icon?: string
+    wrapper?: string
   }
   iconProps?: {
     strokeWidth: string

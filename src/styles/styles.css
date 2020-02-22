@@ -111,21 +111,36 @@ code {
  * 2. Remove the margin in Firefox and Safari.
  */
 
+button {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
+
+button { /* 1 */
+  overflow: visible;
+}
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
 
+button { /* 1 */
+  text-transform: none;
+}
+
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
 
-
+button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -136,7 +151,7 @@ code {
  * Remove the inner border and padding in Firefox.
  */
 
-
+button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
@@ -148,7 +163,7 @@ code {
  * Restore the focus styles unset by the previous rule.
  */
 
-
+button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
@@ -288,10 +303,20 @@ p {
   margin: 0;
 }
 
+button {
+  background: transparent;
+  padding: 0;
+}
+
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
  */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
 
 ol,
 ul {
@@ -352,7 +377,7 @@ hr {
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
 
-
+button,
 [role="button"] {
   cursor: pointer;
 }
@@ -382,6 +407,12 @@ a {
  * supplement a partial reset that is already applied by
  * normalize.css.
  */
+
+button {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
 
 /**
  * Use the configured 'mono' font family for elements that
@@ -446,6 +477,10 @@ object {
   }
 }
 
+.bg-white {
+  background-color: #fff;
+}
+
 .bg-gray-800 {
   background-color: #2d3748;
 }
@@ -500,6 +535,10 @@ object {
 
 .h-lang {
   height: calc(100vh - 69px);
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .leading-none {
@@ -564,6 +603,10 @@ object {
   margin-left: 1rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -595,6 +638,11 @@ object {
   padding-right: 1.5rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -617,6 +665,10 @@ object {
   position: relative;
 }
 
+.top-0 {
+  top: 0;
+}
+
 .right-0 {
   right: 0;
 }
@@ -633,6 +685,10 @@ object {
   top: 100%;
 }
 
+.stroke-current {
+  stroke: currentColor;
+}
+
 .text-white {
   color: #fff;
 }
@@ -641,8 +697,16 @@ object {
   color: #e2e8f0;
 }
 
+.text-gray-400 {
+  color: #cbd5e0;
+}
+
 .text-gray-500 {
   color: #a0aec0;
+}
+
+.text-gray-800 {
+  color: #2d3748;
 }
 
 .text-blue-700 {

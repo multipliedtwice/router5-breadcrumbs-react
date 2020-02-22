@@ -20,8 +20,8 @@ export const Translation = () => {
       </div>
       <div
         className={`absolute left-0 right-0 top-full z-3 
-          w-full h-lang bg-gray-900 flex items-center 
-          justify-center ${isMenuShown ? '' : 'hidden'}`}
+        w-full h-lang bg-gray-900 flex items-center 
+        justify-center ${isMenuShown ? '' : 'hidden'}`}
       >
         <div className='flex'>
           <IconFlagEN
