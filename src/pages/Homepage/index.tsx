@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { Hero, Features, Iframes, Comments } from '../../components'
+import { Hero, Features, Tabss, Comments } from '../../components'
 import { hero, features } from './data'
 import { Header } from '../../components/header'
 import { Footer } from '../../components/footer'
@@ -16,7 +16,7 @@ export const Homepage = () => {
           <Features features={features} />
         </Suspense>
         <hr />
-        <Iframes />
+        <Tabss />
         <Comments />
       </div>
       <Footer />

@@ -31,6 +31,7 @@ export const Hero: FunctionComponent<Props> = ({ hero }) => {
     if (currentIndex + 1 > hero.length) {
       setIndex(0)
     }
+
     if (currentIndex < 0) {
       setIndex(hero.length - 1)
     }
@@ -41,6 +42,10 @@ export const Hero: FunctionComponent<Props> = ({ hero }) => {
 
     return () => clearInterval(autoplayInterval)
   }, [currentIndex, hero.length, direction])
+
+  useEffect(() => {
+    console.log('object')
+  }, [])
 
   function handleClick(indexChange: number, newDirection: string) {
     if (isSlidingBlocked && newDirection === direction) return null
