@@ -13,7 +13,7 @@ const Panel = ({ children }) => {
   return isActive ? <p>{children}</p> : null
 }
 
-export default () => (
+export const Tabss = () => (
   <Tabs>
     <div>
       <Tab>Tab 1</Tab>

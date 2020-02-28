@@ -8,14 +8,6 @@
 
 ## Install
 
-**NPM**
-
-```bash
-npm i router5-breadcrumbs-react
-```
-
-**Yarn**
-
 ```bash
 yarn add router5-breadcrumbs-react
 ```
@@ -204,6 +196,11 @@ export const routes = [
 > [https://github.com/thousandsofraccoons/router5-tabs-react](https://github.com/thousandsofraccoons/router5-tabs-react)
 
 Tiny tabbed navigation component, which renders selected tab in active breadcrumb
+
+### Acknowledgements
+
+Dee Money  
+[<img src="https://avatars3.githubusercontent.com/u/52338586?s=200&v=4" alt="Dee Money" width="100" height="100">](https://github.com/dee-money)
 
 ## License
 
