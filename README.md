@@ -1,6 +1,6 @@
 # router5-breadcrumbs-react
 
-<img src="public/banner-01.jpg" alt="React breadcrumbs component download" width="100%">
+<img src="https://github.com/thousandsofraccoons/router5-breadcrumbs-react/raw/develop/public/banner-01.jpg" alt="React breadcrumbs component download" width="100%">
 
 > Breadcrumbs component, based on router5 and react.js which renders crumbs automatically written in less than 200 lines of code.
 
