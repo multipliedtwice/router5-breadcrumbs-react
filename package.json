@@ -5,7 +5,7 @@
   "scripts": {
     "start:css": "postcss src/styles/app.scss -o src/styles/styles.css -w",
     "start:js": "node scripts/start.ts",
-    "start": "npm-run-all -p start:ts start:css ",
+    "start": "npm-run-all -p start:js start:css ",
     "precompile": "postcss src/styles/app.scss -o src/styles/styles.css",
     "compile": "node scripts/build.ts",
     "prebuild": "postcss src/styles/app.scss -o src/styles/styles.css",
@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@bumaga/tabs": "^0.2.0",
     "i18next": "^19.1.0",
     "i18next-browser-languagedetector": "^4.0.1",
     "react-code-blocks": "^0.0.7",
