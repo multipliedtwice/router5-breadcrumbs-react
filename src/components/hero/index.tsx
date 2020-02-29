@@ -1,5 +1,6 @@
 import React, { useEffect, FunctionComponent, useState } from 'react'
 import './index.scss'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   hero: Array<{
@@ -14,6 +15,7 @@ export const Hero: FunctionComponent<Props> = ({ hero }) => {
   const [currentIndex, setIndex] = useState(0)
   const [direction, setDirection] = useState('right')
   const [isSlidingBlocked, setIsSlidingBlocked] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     let autoplay = () => {
@@ -29,6 +31,7 @@ export const Hero: FunctionComponent<Props> = ({ hero }) => {
     if (currentIndex + 1 > hero.length) {
       setIndex(0)
     }
+
     if (currentIndex < 0) {
       setIndex(hero.length - 1)
     }
@@ -39,6 +42,10 @@ export const Hero: FunctionComponent<Props> = ({ hero }) => {
 
     return () => clearInterval(autoplayInterval)
   }, [currentIndex, hero.length, direction])
+
+  useEffect(() => {
+    console.log('object')
+  }, [])
 
   function handleClick(indexChange: number, newDirection: string) {
     if (isSlidingBlocked && newDirection === direction) return null
@@ -106,9 +113,9 @@ export const Hero: FunctionComponent<Props> = ({ hero }) => {
                 >
                   <div className='slide__content'>
                     <h1 className='slide__heading leading-none font-semibold'>
-                      {banner.title}
+                      {t(banner.title)}
                     </h1>
-                    <p className='slide__text'>{banner.description}</p>
+                    <p className='slide__text'>{t(banner.description)}</p>
                   </div>
                 </div>
               </div>

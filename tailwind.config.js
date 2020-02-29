@@ -276,11 +276,12 @@ module.exports = {
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
+      lang: 'calc(100vh - 69px)',
       screen: '100vh',
     }),
     inset: {
       '0': '0',
-      auto: 'auto',
+      full: '100%',
     },
     letterSpacing: {
       tighter: '-0.05em',
@@ -410,6 +411,7 @@ module.exports = {
     zIndex: {
       auto: 'auto',
       '0': '0',
+      '3': '3',
       '10': '10',
       '20': '20',
       '30': '30',

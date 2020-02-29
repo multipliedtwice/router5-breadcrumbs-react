@@ -1,37 +1,40 @@
 import React, { FunctionComponent } from 'react'
-import { useRoute, Link } from 'react-router5'
+import { Link } from 'react-router5'
 import { BreadcrumbsProps, RouterWithCrumbs } from './typings'
 import { HomeIcon, ArrowIcon } from './assets'
 import { useBreadcrumbs } from './hooks'
 
 export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
-  removeCrumb,
+  hide,
   forward,
   t = (text: string) => text,
   iconProps,
-  homeRouteName = 'home',
+  children,
+  got = {},
+  homeRouteName = ['ru', 'en'],
+  homeRouteLabel = 'Home',
   classes: {
     activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
     currentPage = 'text-gray-500 ml-2',
-    wrapper = 'flex items-baseline text-xl my-10 whitespace-no-wrap',
+    activeCrumb = 'list-none flex items-baseline',
+    wrapper = 'flex items-baseline text-xl py-10 whitespace-no-wrap',
   } = {},
   icons: { CustomHomeIcon = <></>, CustomArrowIcon = <></> } = {},
 }) => {
   const {
-    route: { params, path },
-  } = useRoute()
-
-  const { filteredPaths, handleClick, dependencies } = useBreadcrumbs(
-    removeCrumb,
-    forward
-  )
+    filteredPaths,
+    handleClick,
+    dependencies,
+    path,
+    name,
+    params,
+  } = useBreadcrumbs(hide, forward)
 
   const Arrow = () =>
     CustomArrowIcon.type.name ? CustomArrowIcon : <ArrowIcon {...iconProps} />
 
   const Home = () =>
     CustomHomeIcon.type.name ? CustomHomeIcon : <HomeIcon {...iconProps} />
-
   const Crumbs = () => {
     return (
       <>
@@ -46,16 +49,19 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
               ),
             }
           }
+          const isMostLikelyHome =
+            crumb.route !== '@@router5/UNKNOWN_ROUTE' &&
+            !homeRouteName.some(r => crumb.route === r)
 
           return (
-            crumb.route !== '@@router5/UNKNOWN_ROUTE' && (
+            isMostLikelyHome && (
               <React.Fragment key={idx}>
                 {isNotEnd ? (
                   t(`${crumb.crumb || crumb.name}`) && (
                     <li
                       itemScope
                       itemType='http://data-vocabulary.org/Breadcrumb'
-                      className='list-none flex items-baseline'
+                      className={activeCrumb}
                     >
                       <Link
                         className={activeLink}
@@ -65,10 +71,11 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                         onClick={handleClick}
                         itemProp='url'
                       >
-                        {t(`${crumb.crumb || crumb.name}`)}
+                        {got[idx] !== undefined
+                          ? got[idx]
+                          : t(`${crumb.crumb || crumb.name}`)}
                       </Link>
                       <Arrow />
-                      <Crumbs />
                     </li>
                   )
                 ) : (
@@ -77,7 +84,9 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                     itemType='http://data-vocabulary.org/Breadcrumb'
                     className={currentPage}
                   >
-                    {t(`${crumb.crumb || crumb.name}`)}
+                    {typeof children === 'object'
+                      ? children
+                      : t(`${children || crumb.crumb || crumb.name}`)}
                   </li>
                 )}
               </React.Fragment>
@@ -95,18 +104,18 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
           <li
             itemScope
             itemType='http://data-vocabulary.org/Breadcrumb'
-            className='list-none flex items-baseline'
+            className={activeCrumb}
           >
             <Link
               className={activeLink}
-              routeName={homeRouteName}
+              routeName={name.split('.')[0]}
               itemProp='url'
             >
               <Home />
-              {t('Home')}
+              {t(homeRouteLabel)}
             </Link>
+            <Arrow />
           </li>
-          <Arrow />
           <Crumbs />
         </ol>
       </nav>

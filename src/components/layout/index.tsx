@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react'
-import { Breadcrumbs } from '../../lib'
 import { Github } from '../icons'
 
 type Props = {
@@ -14,7 +13,7 @@ export const Layout: FunctionComponent<Props> = ({ children }) => {
           <Github />
         </a>
       </div>
-      <Breadcrumbs />
+
       {React.cloneElement(children, { customProp: 'Hello' })}
     </>
   )

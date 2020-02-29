@@ -4,8 +4,7 @@ export const HomeIcon = ({
   title = 'To Homepage',
   strokeWidth = '1.5',
   fill = 'none',
-  stroke = '#718096',
-  iconClass = 'mr-2',
+  iconClass = 'mr-2 stroke-current',
 }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -20,7 +19,6 @@ export const HomeIcon = ({
       transform='translate(-0.25 -0.85)'
       style={{
         fill,
-        stroke,
         strokeWidth: `${strokeWidth}px`,
       }}
     />
@@ -29,7 +27,6 @@ export const HomeIcon = ({
       transform='translate(-0.25 -0.85)'
       style={{
         fill,
-        stroke,
         strokeWidth: `${strokeWidth}px`,
       }}
     />

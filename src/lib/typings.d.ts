@@ -1,20 +1,21 @@
 export type BreadcrumbsProps = {
-  removeCrumb?: Array<string>
+  hide?: Array<string>
   forward?: { from: string; to: string }
   t?: ([crumb]: string) => string
+  got?: { [index: number]: string | React.ReactElement }
   debugMode?: boolean
-  homeRouteName?: string
+  homeRouteName?: Array<string>
+  homeRouteLabel?: string
   icons?: {
     CustomHomeIcon: React.ReactElement
     CustomArrowIcon: React.ReactElement
   }
   classes?: {
-    activeLink: string
-    currentPage: string
-    icon: string
-    wrapper: string
-    arrowIcon: string
-    homeIcon: string
+    activeLink?: string
+    currentPage?: string
+    activeCrumb?: string
+    icon?: string
+    wrapper?: string
   }
   iconProps?: {
     strokeWidth: string
