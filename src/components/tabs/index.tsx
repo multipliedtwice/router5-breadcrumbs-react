@@ -1,26 +1,8 @@
 import React from 'react'
-import { Tabs, useTabState, usePanelState } from '@bumaga/tabs'
+import Trails from 'router5-tabs-react'
 
-const Tab = ({ children }) => {
-  const { onClick } = useTabState()
-
-  return <button onClick={onClick}>{children}</button>
-}
-
-const Panel = ({ children }) => {
-  const isActive = usePanelState()
-
-  return isActive ? <p>{children}</p> : null
-}
-
-export const Tabss = () => (
-  <Tabs>
-    <div>
-      <Tab>Tab 1</Tab>
-      <Tab>Tab 2</Tab>
-    </div>
-
-    <Panel>Panel 1</Panel>
-    <Panel>Panel 2</Panel>
-  </Tabs>
+export const Tabs = () => (
+  <Trails>
+    <div></div>
+  </Trails>
 )
