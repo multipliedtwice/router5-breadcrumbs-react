@@ -4,7 +4,7 @@
 
 > Breadcrumbs component, based on router5 and react.js which renders crumbs automatically written in less than 200 lines of code.
 
-[![NPM](https://img.shields.io/npm/v/router5-breadcrumbs.svg)](https://www.npmjs.com/package/router5-breadcrumbs) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![npm](https://img.shields.io/npm/dm/@thousandsofraccoons/router5-breadcrumbs-react)
+[![NPM](https://img.shields.io/npm/v/router5-breadcrumbs-react.svg)](https://www.npmjs.com/package/router5-breadcrumbs-react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![npm](https://img.shields.io/npm/dm/@thousandsofraccoons/router5-breadcrumbs-react)
 
 ## Install
 
