@@ -111,36 +111,21 @@ code {
  * 2. Remove the margin in Firefox and Safari.
  */
 
-button {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-}
-
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-
-button { /* 1 */
-  overflow: visible;
-}
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
 
-button { /* 1 */
-  text-transform: none;
-}
-
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
 
-button,
+
 [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -151,7 +136,7 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 
-button::-moz-focus-inner,
+
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
@@ -163,7 +148,7 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 
-button:-moz-focusring,
+
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
@@ -303,20 +288,10 @@ p {
   margin: 0;
 }
 
-button {
-  background: transparent;
-  padding: 0;
-}
-
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
  */
-
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
 
 ol,
 ul {
@@ -377,7 +352,7 @@ hr {
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
 
-button,
+
 [role="button"] {
   cursor: pointer;
 }
@@ -407,12 +382,6 @@ a {
  * supplement a partial reset that is already applied by
  * normalize.css.
  */
-
-button {
-  padding: 0;
-  line-height: inherit;
-  color: inherit;
-}
 
 /**
  * Use the configured 'mono' font family for elements that
@@ -737,8 +706,8 @@ object {
   width: 25%;
 }
 
-.w-9\/12 {
-  width: 75%;
+.w-4\/12 {
+  width: 33.333333%;
 }
 
 .w-full {
