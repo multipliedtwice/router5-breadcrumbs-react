@@ -1,11 +1,11 @@
 import React from 'react'
 import { Footer } from '../../components/footer'
-import { Breadcrumbs } from '../../lib'
+// import { Breadcrumbs } from 'router5-test-react'
 
 export const Privacy = () => {
   return (
     <>
-      <Breadcrumbs />
+      {/* <Breadcrumbs /> */}
       <article className='container mx-auto my-5'>
         <h1>Privacy Policy of router5-breadcrumbs-react.now.sh/</h1>
         <p>
@@ -46,63 +46,58 @@ export const Privacy = () => {
           Data to the Owner.
         </p>
         <h2>Mode and place of processing the Data</h2>
+        <h3>
+          <strong>Methods of processing</strong>
+        </h3>
         <p>
-          <h3>
-            <strong>Methods of processing</strong>
-          </h3>
-          <p>
-            The Owner takes appropriate security measures to prevent
-            unauthorized access, disclosure, modification, or unauthorized
-            destruction of the Data. The Data processing is carried out using
-            computers and/or IT enabled tools, following organizational
-            procedures and modes strictly related to the purposes indicated. In
-            addition to the Owner, in some cases, the Data may be accessible to
-            certain types of persons in charge, involved with the operation of
-            this Application (administration, sales, marketing, legal, system
-            administration) or external parties (such as third-party technical
-            service providers, mail carriers, hosting providers, IT companies,
-            communications agencies) appointed, if necessary, as Data Processors
-            by the Owner. The updated list of these parties may be requested
-            from the Owner at any time.
-          </p>
+          The Owner takes appropriate security measures to prevent unauthorized
+          access, disclosure, modification, or unauthorized destruction of the
+          Data. The Data processing is carried out using computers and/or IT
+          enabled tools, following organizational procedures and modes strictly
+          related to the purposes indicated. In addition to the Owner, in some
+          cases, the Data may be accessible to certain types of persons in
+          charge, involved with the operation of this Application
+          (administration, sales, marketing, legal, system administration) or
+          external parties (such as third-party technical service providers,
+          mail carriers, hosting providers, IT companies, communications
+          agencies) appointed, if necessary, as Data Processors by the Owner.
+          The updated list of these parties may be requested from the Owner at
+          any time.
         </p>
         <h2>Legal basis of processing</h2>
-        <p>
-          The Owner may process Personal Data relating to Users if one of the
-          following applies:{' '}
-          <ul>
-            <li>
-              Users have given their consent for one or more specific purposes.
-              Note: Under some legislations the Owner may be allowed to process
-              Personal Data until the User objects to such processing
-              (“opt-out”), without having to rely on consent or any other of the
-              following legal bases. This, however, does not apply, whenever the
-              processing of Personal Data is subject to European data protection
-              law;
-            </li>
-            <li>
-              provision of Data is necessary for the performance of an agreement
-              with the User and/or for any pre-contractual obligations thereof;
-            </li>
-            <li>
-              processing is necessary for compliance with a legal obligation to
-              which the Owner is subject;
-            </li>
-            <li>
-              processing is related to a task that is carried out in the public
-              interest or in the exercise of official authority vested in the
-              Owner;
-            </li>
-            <li>
-              processing is necessary for the purposes of the legitimate
-              interests pursued by the Owner or by a third party.
-            </li>
-          </ul>
-          In any case, the Owner will gladly help to clarify the specific legal
-          basis that applies to the processing, and in particular whether the
-          provision of Personal Data is a statutory or contractual requirement,
-          or a requirement necessary to enter into a contract.
-        </p>
+        The Owner may process Personal Data relating to Users if one of the
+        following applies:{' '}
+        <ul>
+          <li>
+            Users have given their consent for one or more specific purposes.
+            Note: Under some legislations the Owner may be allowed to process
+            Personal Data until the User objects to such processing (“opt-out”),
+            without having to rely on consent or any other of the following
+            legal bases. This, however, does not apply, whenever the processing
+            of Personal Data is subject to European data protection law;
+          </li>
+          <li>
+            provision of Data is necessary for the performance of an agreement
+            with the User and/or for any pre-contractual obligations thereof;
+          </li>
+          <li>
+            processing is necessary for compliance with a legal obligation to
+            which the Owner is subject;
+          </li>
+          <li>
+            processing is related to a task that is carried out in the public
+            interest or in the exercise of official authority vested in the
+            Owner;
+          </li>
+          <li>
+            processing is necessary for the purposes of the legitimate interests
+            pursued by the Owner or by a third party.
+          </li>
+        </ul>
+        In any case, the Owner will gladly help to clarify the specific legal
+        basis that applies to the processing, and in particular whether the
+        provision of Personal Data is a statutory or contractual requirement, or
+        a requirement necessary to enter into a contract.
         <h3>Place</h3>
         <p>
           The Data is processed at the Owner's operating offices and in any
@@ -132,23 +127,21 @@ export const Privacy = () => {
           Personal Data shall be processed and stored for as long as required by
           the purpose they have been collected for.
         </p>
-        <p>
-          Therefore:{' '}
-          <ul>
-            <li>
-              Personal Data collected for purposes related to the performance of
-              a contract between the Owner and the User shall be retained until
-              such contract has been fully performed.
-            </li>
-            <li>
-              Personal Data collected for the purposes of the Owner’s legitimate
-              interests shall be retained as long as needed to fulfill such
-              purposes. Users may find specific information regarding the
-              legitimate interests pursued by the Owner within the relevant
-              sections of this document or by contacting the Owner.
-            </li>
-          </ul>
-        </p>
+        Therefore:{' '}
+        <ul>
+          <li>
+            Personal Data collected for purposes related to the performance of a
+            contract between the Owner and the User shall be retained until such
+            contract has been fully performed.
+          </li>
+          <li>
+            Personal Data collected for the purposes of the Owner’s legitimate
+            interests shall be retained as long as needed to fulfill such
+            purposes. Users may find specific information regarding the
+            legitimate interests pursued by the Owner within the relevant
+            sections of this document or by contacting the Owner.
+          </li>
+        </ul>
         <p>
           The Owner may be allowed to retain Personal Data for a longer period
           whenever the User has given consent to such processing, as long as
@@ -214,63 +207,60 @@ export const Privacy = () => {
           Users may exercise certain rights regarding their Data processed by
           the Owner.
         </p>
-        <p>
-          In particular, Users have the right to do the following:{' '}
-          <ul>
-            <li>
-              <strong>Withdraw their consent at any time.</strong> Users have
-              the right to withdraw consent where they have previously given
-              their consent to the processing of their Personal Data.
-            </li>
-            <li>
-              <strong>Object to processing of their Data.</strong> Users have
-              the right to object to the processing of their Data if the
-              processing is carried out on a legal basis other than consent.
-              Further details are provided in the dedicated section below.
-            </li>
-            <li>
-              <strong>Access their Data.</strong> Users have the right to learn
-              if Data is being processed by the Owner, obtain disclosure
-              regarding certain aspects of the processing and obtain a copy of
-              the Data undergoing processing.
-            </li>
-            <li>
-              <strong>Verify and seek rectification.</strong> Users have the
-              right to verify the accuracy of their Data and ask for it to be
-              updated or corrected.
-            </li>
-            <li>
-              <strong>Restrict the processing of their Data.</strong> Users have
-              the right, under certain circumstances, to restrict the processing
-              of their Data. In this case, the Owner will not process their Data
-              for any purpose other than storing it.
-            </li>
-            <li>
-              <strong>
-                Have their Personal Data deleted or otherwise removed.
-              </strong>{' '}
-              Users have the right, under certain circumstances, to obtain the
-              erasure of their Data from the Owner.
-            </li>
-            <li>
-              <strong>
-                Receive their Data and have it transferred to another
-                controller.
-              </strong>{' '}
-              Users have the right to receive their Data in a structured,
-              commonly used and machine readable format and, if technically
-              feasible, to have it transmitted to another controller without any
-              hindrance. This provision is applicable provided that the Data is
-              processed by automated means and that the processing is based on
-              the User's consent, on a contract which the User is part of or on
-              pre-contractual obligations thereof.
-            </li>
-            <li>
-              <strong>Lodge a complaint.</strong> Users have the right to bring
-              a claim before their competent data protection authority.
-            </li>
-          </ul>
-        </p>
+        In particular, Users have the right to do the following:{' '}
+        <ul>
+          <li>
+            <strong>Withdraw their consent at any time.</strong> Users have the
+            right to withdraw consent where they have previously given their
+            consent to the processing of their Personal Data.
+          </li>
+          <li>
+            <strong>Object to processing of their Data.</strong> Users have the
+            right to object to the processing of their Data if the processing is
+            carried out on a legal basis other than consent. Further details are
+            provided in the dedicated section below.
+          </li>
+          <li>
+            <strong>Access their Data.</strong> Users have the right to learn if
+            Data is being processed by the Owner, obtain disclosure regarding
+            certain aspects of the processing and obtain a copy of the Data
+            undergoing processing.
+          </li>
+          <li>
+            <strong>Verify and seek rectification.</strong> Users have the right
+            to verify the accuracy of their Data and ask for it to be updated or
+            corrected.
+          </li>
+          <li>
+            <strong>Restrict the processing of their Data.</strong> Users have
+            the right, under certain circumstances, to restrict the processing
+            of their Data. In this case, the Owner will not process their Data
+            for any purpose other than storing it.
+          </li>
+          <li>
+            <strong>
+              Have their Personal Data deleted or otherwise removed.
+            </strong>{' '}
+            Users have the right, under certain circumstances, to obtain the
+            erasure of their Data from the Owner.
+          </li>
+          <li>
+            <strong>
+              Receive their Data and have it transferred to another controller.
+            </strong>{' '}
+            Users have the right to receive their Data in a structured, commonly
+            used and machine readable format and, if technically feasible, to
+            have it transmitted to another controller without any hindrance.
+            This provision is applicable provided that the Data is processed by
+            automated means and that the processing is based on the User's
+            consent, on a contract which the User is part of or on
+            pre-contractual obligations thereof.
+          </li>
+          <li>
+            <strong>Lodge a complaint.</strong> Users have the right to bring a
+            claim before their competent data protection authority.
+          </li>
+        </ul>
         <h4>Details about the right to object to processing</h4>
         <p>
           Where Personal Data is processed for a public interest, in the
