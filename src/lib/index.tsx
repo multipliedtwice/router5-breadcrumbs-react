@@ -4,7 +4,7 @@ import { BreadcrumbsProps, RouterWithCrumbs } from './typings'
 import { HomeIcon, ArrowIcon } from './assets'
 import { useBreadcrumbs } from './hooks'
 
-export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
+const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   hide,
   forward,
   t = (text: string) => text,
@@ -42,17 +42,17 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
           const isNotEnd = filteredPaths.length > idx + 1
 
           if (!crumb.crumb) {
-            crumb = {
+            crumb = dependencies.length ? {
               ...crumb,
               ...dependencies.find(
                 (el: { name: string }) => el.name === crumb.route
               ),
-            }
+            } : crumb
           }
           const isMostLikelyHome =
             crumb.route !== '@@router5/UNKNOWN_ROUTE' &&
             !homeRouteName.some(r => crumb.route === r)
-
+          console.log(crumb)
           return (
             isMostLikelyHome && (
               <React.Fragment key={idx}>
@@ -79,16 +79,16 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                     </li>
                   )
                 ) : (
-                  <li
-                    itemScope
-                    itemType='http://data-vocabulary.org/Breadcrumb'
-                    className={currentPage}
-                  >
-                    {typeof children === 'object'
-                      ? children
-                      : t(`${children || crumb.crumb || crumb.name}`)}
-                  </li>
-                )}
+                    <li
+                      itemScope
+                      itemType='http://data-vocabulary.org/Breadcrumb'
+                      className={currentPage}
+                    >
+                      {typeof children === 'object'
+                        ? children
+                        : t(`${children || crumb.crumb || crumb.name}`)}
+                    </li>
+                  )}
               </React.Fragment>
             )
           )
@@ -96,7 +96,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
       </>
     )
   }
-
+  console.log(name, 23234)
   return (
     path !== '/' && (
       <nav style={{ textTransform: 'capitalize' }}>
@@ -108,7 +108,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
           >
             <Link
               className={activeLink}
-              routeName={name.split('.')[0]}
+              routeName={name?.split('.')[0]}
               itemProp='url'
             >
               <Home />
@@ -122,3 +122,5 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
     )
   )
 }
+
+export default Breadcrumbs

@@ -35,7 +35,7 @@ export const useBreadcrumbs = (
     const newPath = {
       route: parameter,
       name: parameter.replace(/\./gi, '-'),
-      crumb: findCrumb(curr, dependencies as Array<RouterWithCrumbs>),
+      crumb: dependencies.length ? findCrumb(curr, dependencies as Array<RouterWithCrumbs>) : '',
     }
     paths.push(newPath)
     return paths
