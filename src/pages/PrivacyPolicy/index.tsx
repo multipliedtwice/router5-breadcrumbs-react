@@ -1,11 +1,11 @@
 import React from 'react'
 import { Footer } from '../../components/footer'
-// import { Breadcrumbs } from 'router5-test-react'
+import Breadcrumbs from '../../../build'
 
 export const Privacy = () => {
   return (
     <>
-      {/* <Breadcrumbs /> */}
+      <Breadcrumbs />
       <article className='container mx-auto my-5'>
         <h1>Privacy Policy of router5-breadcrumbs-react.now.sh/</h1>
         <p>

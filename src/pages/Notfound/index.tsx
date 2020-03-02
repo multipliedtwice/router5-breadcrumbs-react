@@ -1,5 +1,5 @@
 import React from 'react'
-import { Breadcrumbs } from '../../lib'
+// import { Breadcrumbs } from '../../lib'
 import { Link } from 'react-router5'
 import { useTranslation } from 'react-i18next'
 
@@ -18,13 +18,13 @@ export const NotFound = () => {
           window.devicePixelRatio})`,
       }}
     >
-      <Breadcrumbs
+      {/* <Breadcrumbs
         classes={{
           activeLink: 'flex items-baseline hover:underline mx-2',
           activeCrumb: 'list-none flex items-baseline text-white',
           currentPage: 'text-gray-400 ml-2',
         }}
-      />
+      /> */}
       <div className='absolute left-0 right-0 top-0 text-white h-screen flex flex-col justify-center items-center'>
         <h1>{t('Not Found')}</h1>
         <Link
