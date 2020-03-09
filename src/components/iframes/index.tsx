@@ -27,7 +27,7 @@ export const Iframes = () => {
 
       <div className='px-6 sm:px-4 md:px-0'>
         <iframe
-          src='https://codesandbox.io/embed/pensive-leftpad-ggpgy?fontsize=14&hidenavigation=1&theme=dark'
+          src='https://codesandbox.io/embed/pensive-leftpad-ggpgy?fontsize=14&hidenavigation=1&&initialpath=%2Finfo&theme=dark'
           style={{
             height: '500px',
           }}

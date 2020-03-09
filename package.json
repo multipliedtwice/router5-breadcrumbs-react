@@ -1,6 +1,6 @@
 {
   "name": "router5-breadcrumbs-react",
-  "version": "0.1.9",
+  "version": "0.1.13",
   "main": "build/index.js",
   "scripts": {
     "start:css": "postcss src/styles/app.scss -o src/styles/styles.css -w",
