@@ -12,7 +12,7 @@ export const Footer = () => {
           <div className='w-4/12'>
             <a
               className='mt-4 mb-2 flex'
-              href='https://router5-tabs-react.now.sh/'
+              href='https://router5-tabs-react.netlify.com/'
             >
               <strong>router5-tabs-react</strong>
             </a>

@@ -14,10 +14,10 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   homeRouteName = ['ru', 'en'],
   homeRouteLabel = 'Home',
   classes: {
-    activeLink = 'flex items-baseline text-blue-700 hover:underline mx-2',
-    currentPage = 'text-gray-500 ml-2',
-    activeCrumb = 'list-none flex items-baseline',
-    wrapper = 'flex items-baseline text-xl py-10 whitespace-no-wrap',
+    wrapper = 'breadcrumbs flex items-baseline text-xl py-10 whitespace-no-wrap',
+    activeLink = 'breadcrumbs-link flex items-baseline text-blue-700 hover:underline mx-2',
+    currentPage = 'breadcrumbs-current text-gray-500 ml-2',
+    activeCrumb = 'breadcrumbs-crumb list-none flex items-baseline',
   } = {},
   icons: { CustomHomeIcon = <></>, CustomArrowIcon = <></> } = {},
 }) => {
@@ -42,17 +42,20 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
           const isNotEnd = filteredPaths.length > idx + 1
 
           if (!crumb.crumb) {
-            crumb = dependencies.length ? {
-              ...crumb,
-              ...dependencies.find(
-                (el: { name: string }) => el.name === crumb.route
-              ),
-            } : crumb
+            crumb = dependencies.length
+              ? {
+                  ...crumb,
+                  ...dependencies.find(
+                    (el: { name: string }) => el.name === crumb.route
+                  ),
+                }
+              : crumb
           }
-          const isMostLikelyHome =
-            crumb.route !== '@@router5/UNKNOWN_ROUTE' &&
-            !homeRouteName.some(r => crumb.route === r)
-          console.log(crumb)
+          const isMostLikelyHome = Array.isArray(homeRouteName)
+            ? crumb.route !== '@@router5/UNKNOWN_ROUTE' &&
+              !homeRouteName.some(r => crumb.route === r)
+            : false
+
           return (
             isMostLikelyHome && (
               <React.Fragment key={idx}>
@@ -79,16 +82,16 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                     </li>
                   )
                 ) : (
-                    <li
-                      itemScope
-                      itemType='http://data-vocabulary.org/Breadcrumb'
-                      className={currentPage}
-                    >
-                      {typeof children === 'object'
-                        ? children
-                        : t(`${children || crumb.crumb || crumb.name}`)}
-                    </li>
-                  )}
+                  <li
+                    itemScope
+                    itemType='http://data-vocabulary.org/Breadcrumb'
+                    className={currentPage}
+                  >
+                    {typeof children === 'object'
+                      ? children
+                      : t(`${children || crumb.crumb || crumb.name}`)}
+                  </li>
+                )}
               </React.Fragment>
             )
           )
@@ -96,7 +99,6 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
       </>
     )
   }
-  console.log(name, 23234)
   return (
     path !== '/' && (
       <nav style={{ textTransform: 'capitalize' }}>
